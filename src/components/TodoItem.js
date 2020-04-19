@@ -1,11 +1,23 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export class TodoItem extends Component {
+    getStyle = () => {
+       if (this.props.todo.completed) {
+           return {
+               textDecoration: 'line-through'
+           }
+       } else {
+            return {
+                textDecoration:'none'
+         }
+       }
+    }
+
     render() {
         return (
-            <div>
-                <p>{ this.props.todos.title }</p>
+            <div style={this.getStyle()}>
+                <p>{ this.props.todo.title }</p>
             </div>
         )
     }
@@ -14,5 +26,7 @@ export class TodoItem extends Component {
 
 //prop-types
 TodoItem.propTypes = { todos: PropTypes.object.isRequired}
+
+
 
 export default TodoItem
