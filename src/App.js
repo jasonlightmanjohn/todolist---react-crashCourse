@@ -2,6 +2,8 @@ import React , {Component}from 'react';
 import './App.css';
 import Todos from './components/Todos';
 import Header from './components/layout/header';
+import AddTodo from './components/AddToDo';
+
 class App extends Component {
   state = {
     todos: [
@@ -13,7 +15,7 @@ class App extends Component {
         {
         id: 2,
         title: 'have dinner with wife',
-        completed: true
+        completed: false
         },
       {
       id: 3,
@@ -42,8 +44,11 @@ class App extends Component {
    render() {
       return (
         <div className="App">
+          <div class="container">
           <Header />
+          <AddTodo />
           <Todos todos = {this.state.todos} markComplete={this.markComplete} delTodo={this.delTodo}/>
+          </div>
         </div>
       );
   }

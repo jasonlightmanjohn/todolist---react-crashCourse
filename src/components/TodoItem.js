@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { findRenderedComponentWithType } from 'react-dom/test-utils';
+//import { findRenderedComponentWithType } from 'react-dom/test-utils';
 
 export class TodoItem extends Component {
     getStyle = () => {
